@@ -1,0 +1,347 @@
+%!TEX TS-program = xelatex
+
+%%%%%%%%%%%%%%%%%%%
+% CLASS VARIABLES % 
+%%%%%%%%%%%%%%%%%%%
+
+\def \cvlanguage{british}
+\def \cvprofilepicturesize{5cm}
+\def \entryspacing{22.0pt}
+\documentclass[a4paper]{cv}
+ 
+%%%%%%%%%%%%
+% COLORIZE % 
+%%%%%%%%%%%%
+
+%great color schemes @ http://materialuicolors.co/
+\definecolor{sidecolor}    {HTML}{E7E7E7} %gray
+\definecolor{maincolor}    {HTML}{1E88E5} %blue
+\colorlet{starcolor}       {maincolor}
+\colorlet{mainbubbletext}  {white}
+\colorlet{textcolor}       {black!80} %or darkgray
+\colorlet{iconsymbolcolor} {white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+% COVER LETTER %
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+% FOCUS POINTS % 
+%%%%%%%%%%%%%%%%
+
+\def \focuspoints{
+    \begin{center}
+            \smartdiagram[bubble diagram]{
+            \color{mainbubbletext}\textbf{Technology},
+             \textbf{Automa-}\\\textbf{tion},
+            \textbf{Security},
+            \boxup[b]{\center{\textbf{Log}}}{\textbf{Analytics}},
+            \textbf{Docker},
+            \boxup[b]{\center{\textbf{Continuous}}}{\textbf{Integration}},
+            \textbf{Puppet}
+        }
+    \end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+% PERSONAL PROJECTS % 
+%%%%%%%%%%%%%%%%%%%%%
+
+\def \personalprojects{
+    \begin{entrylist}
+        \entrysidebar
+            {Lorem ipsum dolor}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco}          
+        \entrysidebar
+            {Lorem ipsum dolor}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco}    
+        \entrysidebar
+            {Lorem ipsum dolor}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco}
+        \entrysidebar
+            {More..}
+            {You can find more of my projects on \href{https://\gitsite}{\gitsite. Take a look.}}
+    \end{entrylist}
+}
+
+%%%%%%%%%%%%%%%%
+% PLACES LIVED % 
+%%%%%%%%%%%%%%%%
+
+\def \placeslived{
+    \includegraphics[scale=0.2179]{images/maps/europe_blue}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MY ADDRESS - COVER LETTER % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def \coverletteraddress {Nice Street 21/2 \\ 1234 Vienna \\ Austria}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% LETTER ADDRESSED TO %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\def \addressedto {Leann Keeton}
+
+%%%%%%%%%%%%%%%%%%%
+% COMPANY ADDRESS %
+%%%%%%%%%%%%%%%%%%%
+
+\def \companyaddress{%
+    Dream Job Inc. \\
+    Next Door 42 \\
+    2412 Vienna \\
+    Austria
+}
+
+%%%%%%%%%%%
+% SUBJECT %
+%%%%%%%%%%%
+
+\def \subject{%
+    Re: Open Job position in ...
+}
+
+%%%%%%%%%%%%%%
+% SALUTATION %
+%%%%%%%%%%%%%%
+
+\def \salutation{%
+    Dear Mr. \addressedto
+}
+
+%%%%%%%%%%%%
+% ABOUT ME % 
+%%%%%%%%%%%%
+
+\def \aboutme{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+}
+
+%%%%%%%%%%%%%%%
+% WHY COMPANY %
+%%%%%%%%%%%%%%%
+
+\def \company{Dream Job Inc}
+\def \whycompany{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+}
+
+%%%%%%%%%%
+% WHY ME %
+%%%%%%%%%%
+
+\def \whyme{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+}
+
+%%%%%%%%%%%
+% CLOSING %
+%%%%%%%%%%%
+
+\def \closing{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    Yours sincerely,
+}
+
+%%%%%%%%%%%%%
+% SIGNATURE %
+%%%%%%%%%%%%%
+
+\def \signature{
+    \hspace{-6pt}%
+    \includegraphics[width=80pt]{images/signature/dummy}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+% CURRICULUM VITAE %
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% PERSONAL DETAILS % 
+%%%%%%%%%%%%%%%%%%%%
+
+\def \profilepicture     {images/profilepic/profilepicture_front_blue_zoom}
+\def \name               {Clemens Kaserer}
+\def \jobtitle           {Dream Job Position}
+\def \birthday           {XX Month 19XX}
+\def \numberphone        {+43 (0) 664 123 45 67}    
+\def \mail               {clemens.kaserer@mail.address}     
+\def \linkedin           {at.linkedin.com/in/ckaserer}    
+\def \gitsite            {github.com/ckaserer}
+\def \cvinfoaddress      {Nice Street 21/2 \newline 1234 Vienna \newline Austria}
+
+%%%%%%%%%%%%%%%%%%
+% OS PREFERENCES % 
+%%%%%%%%%%%%%%%%%%
+
+\def \ospreferences{
+    \begin{tabular}{p{1.5cm} @{\hskip 0.5cm}p{63pt}}
+        \textbf{Linux}   & \score{5}{5} \\
+        \textbf{Unix}    & \score{4}{5} \\
+        \textbf{MacOS}   & \score{3}{5} \\
+        \textbf{Windows} & \score{4}{5} \\
+    \end{tabular}
+}
+
+%%%%%%%%%%
+% SKILLS % 
+%%%%%%%%%%
+
+\def \skills{
+    \begin{center}
+        \smartdiagram[bubble diagram]{
+            \color{mainbubbletext}\textbf{Programming}\\\color{mainbubbletext}\textbf{Skills},
+                \textbf{Python},
+                \textbf{Java},
+                \textbf{Puppet},
+                \textbf{Bash},
+                \textbf{C\#},   
+                \textbf{C/C++},
+                \textbf{LaTeX}
+        }    
+        \smartdiagramset{
+            set color list = {materialgreen, materialorange, materialyellow, materialcyan, materialamber, materiallime, orange, materialteal, materialpurple}
+        }\\
+        \hspace{1pt}% slightly larger bubbles on the left side
+        \smartdiagram[bubble diagram]{
+            \color{mainbubbletext}\textbf{Personal}\\\color{mainbubbletext}\textbf{Skills},
+                \textbf{Organise},
+                \textbf{Initiative},
+                \textbf{Manage},
+                \textbf{Curiosity},
+                \textbf{Focus},
+                \textbf{Problem}\\\textbf{Solving},
+                \textbf{Team}\\\textbf{Player}    
+           }
+      \end{center}
+}
+
+%%%%%%%%%%%%%
+% LANGUAGES % 
+%%%%%%%%%%%%%
+
+\def \languages{
+    \begin{tabular}{p{1.5cm} @{\hskip 0.5cm}p{63pt}}
+        \textbf{German} & \score{5}{5}  \\
+        \textbf{English} & \score{5}{5} \\
+    \end{tabular}
+}
+
+%%%%%%%%%%%%%%
+% EXPERIENCE % 
+%%%%%%%%%%%%%%
+\RequirePackage{calc}
+\newlength{\logosize} 
+\setlength{\logosize}{45pt}
+\newlength{\entryspace}
+\setlength{\entryspace}{-\logosize+33pt}
+\def \experience{
+    \vspace{\entryspace}
+    \begin{entrylist}    
+        \vspace{\entryspace}
+        \entry
+            {\boxup{XX/20XX -}{XX/20XX}}
+            {Job Position}
+            {   
+                \begin{minipage}[b][\logosize]{\logosize}
+                    \includegraphics[width=\logosize]{images/logos/yourcompanyhere}
+                \end{minipage}
+            }
+            { Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco }
+        \vspace{\entryspace}
+        \entry
+            {\boxup{XX/20XX -}{XX/20XX}}
+            {Job Position}
+            {   \begin{minipage}[b][\logosize]{\logosize}
+                   \includegraphics[width=\logosize]{images/logos/yourcompanyhere}
+                \end{minipage}
+            }
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco }
+        \entry
+            {\boxup{XX/20XX -}{XX/20XX}}
+            {Job Position}
+            {   \begin{minipage}[b][\logosize]{\logosize}
+                    \includegraphics[width=\logosize]{images/logos/yourcompanyhere}
+                \end{minipage}
+            }
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco }
+    \end{entrylist}
+}
+
+%%%%%%%%%%%%%
+% EDUCATION % 
+%%%%%%%%%%%%%
+
+\def \education{
+    \begin{entrylist}
+        \entry
+            {20XX - Now}
+            {Bachelor's Degree in ...}
+            {University of Technology}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed}
+        \entry
+            {20XX - 20XX}
+            {Technical College}
+            {School Name}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed}
+    \end{entrylist}
+}
+
+%%%%%%%%%%%%%%%%%%
+% CERTIFICATIONS % 
+%%%%%%%%%%%%%%%%%%
+
+\def \certifications{
+    \begin{entrylist}
+        \entry
+            {XX/20XX}
+            {Working together in Teams}
+            {Coverdale}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed}
+        \entry
+            {XX/20XX}
+            {Cambridge Certificate B2}
+            {University of Cambridge}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed}
+        \entry
+            {XX/20XX}
+            {EBC*L Career A}
+            {International Center of EBC*L}
+            {Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed}
+    \end{entrylist}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% OTHER QUALIFICATION % 
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\def \listspace{-25pt}
+\def \otherqualifications{
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\vspace{\parsep}    
+    
+    \begin{entrylist}
+        \entry
+            {XX/20XX}
+            {\normalfont{Driver's Licence B}}
+            {Transportation}
+            {\vspace{\listspace}}
+    \end{entrylist}
+}
+
+%%%%%%%%%%%%
+% DOCUMENT % 
+%%%%%%%%%%%%
+    
+\AtBeginDocument{\color{textcolor}}
+
+\begin{document}
+
+    \input{cv-layout}
+
+\end{document}
