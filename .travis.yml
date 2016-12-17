@@ -1,0 +1,68 @@
+language: latex
+sudo: required
+dist: trusty
+addons:
+  apt:
+    packages:
+    - lmodern
+    - dvipng
+    #- texlive-full
+    #- texlive-base
+    #- texlive-bibtex-extra
+    #- texlive-binaries
+    #- texlive-extra-utils
+    #- texlive-font-utils
+    #- texlive-fonts-extra
+    #- texlive-fonts-extra-doc
+    - texlive-fonts-recommended
+    #- texlive-fonts-recommended-doc
+    #- texlive-formats-extra
+    #- texlive-games
+    #- texlive-generic-extra
+    #- texlive-generic-recommended
+    #- texlive-humanities
+    #- texlive-humanities-doc
+    #- texlive-lang-african
+    #- texlive-lang-arabic
+    #- texlive-lang-cjk
+    #- texlive-lang-cyrillic
+    #- texlive-lang-czechslovak
+    #- texlive-lang-english
+    #- texlive-lang-european
+    #- texlive-lang-french
+    #- texlive-lang-german
+    #- texlive-lang-greek
+    #- texlive-lang-indic
+    #- texlive-lang-italian
+    #- texlive-lang-other
+    #- texlive-lang-polish
+    #- texlive-lang-portuguese
+    #- texlive-lang-spanish
+    #- texlive-latex-base
+    #- texlive-latex-base-doc
+    - texlive-latex-extra
+    #- texlive-latex-extra-doc
+    - texlive-latex-recommended
+    #- texlive-latex-recommended-doc
+    #- texlive-luatex
+    #- texlive-math-extra
+    #- texlive-metapost
+    #- texlive-metapost-doc
+    #- texlive-music
+    #- texlive-omega
+    - texlive-pictures
+    #- texlive-pictures-doc
+    #- texlive-plain-extra
+    - texlive-pstricks # definitly needed
+    #- texlive-pstricks-doc
+    #- texlive-publishers
+    #- texlive-publishers-doc
+    #- texlive-science
+    #- texlive-science-doc
+    - texlive-xetex
+script:
+- mkdir _build
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+notifications:
+  slack:
+    secure: sU5FzoFNCOMQDMnOpJICYu5fa1yHw70ATbush6suW8pKssbu6TS81wIm/FL1+qbNLfECrzcg9U2I+5uskR5xoD/V1QjUr31Vl+Z4+23sW33Mkb+bN43jlRZozRfTwg95f1ptAx5DUF20XAyVJkWUMa93+Ie2W8KmOfc8NXM80BDstwQsQDggFLIaqAnfYkmAyCx7dWWFQuzWjFvPzp6NyNJbDMWhbJRjYaVOtslaFzcZ/Fb8DDvcAnd1NRT5nyFy2VXdkYB1SunGoxGyXzFY33a1yZXAMaqjpJM0kESgI5qPgsXZDNbix/G7+XNlcoxO/4JMcIsF4qZ5qTkYFqbNRwHZ9mtlSRAnhg5ep7deB/9lc+F+f9w4sGPQgC5g7tRBXX8jUTp0h2bbrkoBhPz1VW8rShVb/6nDQeY1dSp3gYqvtRRO0QGHcJ7jz3d+5YNuhYX4QGB7GInWWEM290k2Q6+3TX8g9v2vUrBDggjmWfEqGYHBWnr5OiKN2rZwCmH5qfTyzlDiRTPraYZonVBZImtdQ8YeuhsyBIHl1QmN+KKtAvgrAZknaU67sutgR2KR//DDDMuL8+iThVu0SSsK/PH2g5Tf5XpYd7rqyv1CyRqIgU5MsINoJb7SXnHZBinhbQJETFu5qalh+9I3gaRjE3BN5Mh1cHv1SofOaGIeMSk=
