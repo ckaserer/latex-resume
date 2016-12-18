@@ -1,4 +1,18 @@
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+  slack:
+    rooms:
+      secure: Fm85nM3r65BVexwIWB8xoMibbAN5A8mPfw+x0VS5wOQ16/MuTUsJ0J1u1rBV2YCbIkteT/SwDtM3Op83CEwq7Is5N12yiqzNhOVyyiTMd1j69kIecjn8xLuGcxhsx9FWISFTRkPYlPdfAcd/rGtLbMuaq7ubV4IbCnUKwbr/vkg4NYuR4xsimait6quiQ3uYez11Ansb/WdEBbRqCCrpHHuUToAEJ+lNuInEZFhFh0HKeJjZXBLk3nmY/+X3An9PHnU698hkh/ZfVJs+GUEyLS9H+kqRma641JquqqtfalqWH3ujBSNeCH+r0PK38svQQlK9lkZ+OQWTvtw3Krliyc2Dq2cDQZZdKFJyYZgSNZXnrODb+kh/OkpL8IpENPVu4AsrhivFRJ+UJIjZem13PbZqECPmpAO9CezYvv6PP87W2JVx8g9LiXnJqNlP/RrzIOGvjAXuVirKgkYV4w+3NZPATzZ85+9lHxe6Z0ZeB7CZaiwd92gw/nAyU69YGB5Pw/kpnHZvvvmBaHSVySDn9YYTlQixBoH913AOa0S3rRzTU7cmfll+qb7LWjIMDeGuUypBACOdit6GbWQMIobjUzuYHBHoozRdRAeqRtQuNF0ECqkwJztNuMBnRi196okGvExayWy/cpOAjXMIuX8gKzHFHcDHDLV4yRtKut71mdY=
+    template:
+      - "%{commit_subject}"
+      - "build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}"
+      - "by %{author} %{result} in %{duration}"
+    on_success: always
+    on_failure: always
 language: latex
+os: linux
 dist: trusty
 addons:
   apt:
@@ -62,13 +76,3 @@ addons:
 script:
 - mkdir _build
 - xelatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
-notifications:
-  slack:
-    rooms:
-      secure: Fm85nM3r65BVexwIWB8xoMibbAN5A8mPfw+x0VS5wOQ16/MuTUsJ0J1u1rBV2YCbIkteT/SwDtM3Op83CEwq7Is5N12yiqzNhOVyyiTMd1j69kIecjn8xLuGcxhsx9FWISFTRkPYlPdfAcd/rGtLbMuaq7ubV4IbCnUKwbr/vkg4NYuR4xsimait6quiQ3uYez11Ansb/WdEBbRqCCrpHHuUToAEJ+lNuInEZFhFh0HKeJjZXBLk3nmY/+X3An9PHnU698hkh/ZfVJs+GUEyLS9H+kqRma641JquqqtfalqWH3ujBSNeCH+r0PK38svQQlK9lkZ+OQWTvtw3Krliyc2Dq2cDQZZdKFJyYZgSNZXnrODb+kh/OkpL8IpENPVu4AsrhivFRJ+UJIjZem13PbZqECPmpAO9CezYvv6PP87W2JVx8g9LiXnJqNlP/RrzIOGvjAXuVirKgkYV4w+3NZPATzZ85+9lHxe6Z0ZeB7CZaiwd92gw/nAyU69YGB5Pw/kpnHZvvvmBaHSVySDn9YYTlQixBoH913AOa0S3rRzTU7cmfll+qb7LWjIMDeGuUypBACOdit6GbWQMIobjUzuYHBHoozRdRAeqRtQuNF0ECqkwJztNuMBnRi196okGvExayWy/cpOAjXMIuX8gKzHFHcDHDLV4yRtKut71mdY=
-    template:
-      - "%{commit_subject}"
-      - "build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}"
-      - "by %{author} %{result} in %{duration}"
-    on_success: always
-    on_failure: always
