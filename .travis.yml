@@ -73,6 +73,7 @@ addons:
     #- texlive-science
     #- texlive-science-doc
     - texlive-xetex
+before_script:
+  - mkdir _build
 script:
-- mkdir _build
-- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+  - xelatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
