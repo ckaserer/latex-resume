@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ckaserer/resume.svg?branch=master)](https://travis-ci.org/ckaserer/resume)
+[![Build Status](https://travis-ci.org/ckaserer/latex-resume.svg?branch=master)](https://travis-ci.org/ckaserer/latex-resume)
 
 # Cover Letter & Curriculum Vitae
 
