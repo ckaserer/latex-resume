@@ -6,5 +6,31 @@ This simple Resume/CV template features a large sidebar with key information abo
 
 ---
 
-Most of the colors used have been picked from this [Color Palette for Material Design](
-http://materialuicolors.co/).
+## Directory Tree
+
+```
+~/latex-resume/
+├── fonts/
+│   └── clearsans/      => contains ttf
+├── images/
+│   ├── logos/
+│   │   ├── git.png
+│   │   ├── linkedin.png
+│   ├── maps/
+│   │   ├── europe.png
+│   │   ├── europe_blue.png
+│   ├── profilepic/
+│   ├── resource-links/
+│   │   ├── logo_git.webloc
+│   │   ├── logo_linkedin.webloc
+│   │   ├── map_europe.webloc
+│   └── signature/
+├── ClearSans.sty
+├── cv-layout.tex
+├── cv.cls
+└── cv.tex
+```
+
+---
+
+Most of the colors used have been picked from this [Color Palette for Material Design](http://materialuicolors.co/).
