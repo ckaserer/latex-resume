@@ -6,10 +6,10 @@ This simple Resume/CV template features a large sidebar with key information abo
 
 ## Screenshots
 
-<center><img src="https://raw.githubusercontent.com/ckaserer/latex-resume/master/cover-letter.png" width=450px />
+<p align="center"><img src="https://raw.githubusercontent.com/ckaserer/latex-resume/master/cover-letter.png" width=450px />
 
 <img src="https://raw.githubusercontent.com/ckaserer/latex-resume/master/curriculum-vitae.png" width=450px />
-</center>
+</p>
 
 ## Directory Tree
 
