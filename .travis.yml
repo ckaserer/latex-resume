@@ -1,79 +1,20 @@
+version: "~> 1.0"
+os: linux
+language: shell
+services: docker
 notifications:
   email:
     on_success: never
     on_failure: never
   slack:
+    if: branch = master
     rooms:
       secure: Fm85nM3r65BVexwIWB8xoMibbAN5A8mPfw+x0VS5wOQ16/MuTUsJ0J1u1rBV2YCbIkteT/SwDtM3Op83CEwq7Is5N12yiqzNhOVyyiTMd1j69kIecjn8xLuGcxhsx9FWISFTRkPYlPdfAcd/rGtLbMuaq7ubV4IbCnUKwbr/vkg4NYuR4xsimait6quiQ3uYez11Ansb/WdEBbRqCCrpHHuUToAEJ+lNuInEZFhFh0HKeJjZXBLk3nmY/+X3An9PHnU698hkh/ZfVJs+GUEyLS9H+kqRma641JquqqtfalqWH3ujBSNeCH+r0PK38svQQlK9lkZ+OQWTvtw3Krliyc2Dq2cDQZZdKFJyYZgSNZXnrODb+kh/OkpL8IpENPVu4AsrhivFRJ+UJIjZem13PbZqECPmpAO9CezYvv6PP87W2JVx8g9LiXnJqNlP/RrzIOGvjAXuVirKgkYV4w+3NZPATzZ85+9lHxe6Z0ZeB7CZaiwd92gw/nAyU69YGB5Pw/kpnHZvvvmBaHSVySDn9YYTlQixBoH913AOa0S3rRzTU7cmfll+qb7LWjIMDeGuUypBACOdit6GbWQMIobjUzuYHBHoozRdRAeqRtQuNF0ECqkwJztNuMBnRi196okGvExayWy/cpOAjXMIuX8gKzHFHcDHDLV4yRtKut71mdY=
     template:
-      - "%{commit_subject}"
-      - "build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}"
-      - "by %{author} %{result} in %{duration}"
-    on_success: always
+    - "%{commit_subject}"
+    - build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}
+    - by %{author} %{result} in %{duration}
+    on_success: change
     on_failure: always
-language: latex
-os: linux
-dist: trusty
-addons:
-  apt:
-    packages:
-    - lmodern
-    - dvipng
-    #- texlive-full
-    #- texlive-base
-    #- texlive-bibtex-extra
-    #- texlive-binaries
-    #- texlive-extra-utils
-    #- texlive-font-utils
-    #- texlive-fonts-extra
-    #- texlive-fonts-extra-doc
-    - texlive-fonts-recommended
-    #- texlive-fonts-recommended-doc
-    #- texlive-formats-extra
-    #- texlive-games
-    #- texlive-generic-extra
-    #- texlive-generic-recommended
-    #- texlive-humanities
-    #- texlive-humanities-doc
-    #- texlive-lang-african
-    #- texlive-lang-arabic
-    #- texlive-lang-cjk
-    #- texlive-lang-cyrillic
-    #- texlive-lang-czechslovak
-    #- texlive-lang-english
-    #- texlive-lang-european
-    #- texlive-lang-french
-    #- texlive-lang-german
-    #- texlive-lang-greek
-    #- texlive-lang-indic
-    #- texlive-lang-italian
-    #- texlive-lang-other
-    #- texlive-lang-polish
-    #- texlive-lang-portuguese
-    #- texlive-lang-spanish
-    #- texlive-latex-base
-    #- texlive-latex-base-doc
-    - texlive-latex-extra
-    #- texlive-latex-extra-doc
-    - texlive-latex-recommended
-    #- texlive-latex-recommended-doc
-    #- texlive-luatex
-    #- texlive-math-extra
-    #- texlive-metapost
-    #- texlive-metapost-doc
-    #- texlive-music
-    #- texlive-omega
-    - texlive-pictures
-    #- texlive-pictures-doc
-    #- texlive-plain-extra
-    - texlive-pstricks # definitly needed
-    #- texlive-pstricks-doc
-    #- texlive-publishers
-    #- texlive-publishers-doc
-    #- texlive-science
-    #- texlive-science-doc
-    - texlive-xetex
-before_script:
-  - mkdir _build
 script:
-  - xelatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+  - source bashrc && latex-resume
